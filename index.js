@@ -40,9 +40,14 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(aromalar){
+  const aromalarArray = [...orijinalTatlar];
+  return aromalar;
+  
 }
+console.log(kopyala(orijinalTatlar));
+
+
 
 
 /* Görev 2:
@@ -56,10 +61,17 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar){
+  return orijinalTatlar
 }
+console.log(dizi25Cesitmi(orijinalTatlar.length));
 
+if (orijinalTatlar.length === 25){
+  console.log(true);
+}
+else {
+  console.log(false);
+}
 
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
@@ -74,9 +86,13 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(orijinalTatlar){
+orijinalTatlar.unshift('Kakule');
+  return orijinalTatlar
+
 }
+console.log(cesitEkle(orijinalTatlar));
+
 
 
 /* Cörev 4:
@@ -92,10 +108,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(orijinalTatlar) {
+orijinalTatlar.pop();
+return orijinalTatlar
 }
-
+console.log(sonCesitiKaldir(orijinalTatlar));
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,9 +125,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(orijinalTatlar, sayi){
+indekstekiCesitiGetir = orijinalTatlar.indexOf(2);
+return orijinalTatlar;
+
 }
+console.log(indekstekiCesitiGetir(orijinalTatlar, 2));
 
 
 /* Görev 6:
@@ -128,10 +148,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzet){ 
+const yeniCesit = tatlar.indexOf(lezzet);
+tatlar.splice(yeniCesit, 1);
+return tatlar
 }
-
+ismeGoreCesitCikar(orijinalTatlar, "Tarçın");
 
 /* Görev 7:
 
@@ -154,9 +176,16 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, filtre) {
+let valentinesDay = []
+ for (let i=0; i<tatlar.length; i++) {
+  if (tatlar[i].includes(filtre)) {
+    valentinesDay.push(tatlar[i])
+    }
+  }
+  return valentinesDay
 }
+console.log(ismeGoreFiltrele(orijinalTatlar, "çikolata"));
 
 
 
@@ -172,9 +201,19 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(ortDizi) {
+  let kelimeSayı = 0;
+  const ortDiziLength = ortDizi.length;
+  for (let i=0; i<ortDiziLength; i++) {
+    kelimeSayı = ortDizi[i].split(" ").length;
+  }
+  return kelimeSayı / ortDiziLength
 }
+console.log(ortalamaKelimeSayisi(orijinalTatlar));
+
+
+
+
 
 
 /* ALIŞTIRMA 2:
@@ -188,11 +227,7 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 
   Örneğin: rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar) çalıştırıldığında ["Kestane", "Ballı Badem,"..."Hindistan Cevizi", "Kuru üzüm"].
 */
-
-
-function rastgeleTatlar(/*kod buraya*/){
-  /*kod buraya*/
-}
+ 
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 // const yeniTatlar = [
